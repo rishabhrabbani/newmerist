@@ -7,7 +7,7 @@ export default function DonateModal({ isOpen, onClose }) {
   const [form, setForm] = useState({ name: "", mobile: "", email: "", address: "", amount: "", transactionId: "", message: "" });
   const [errors, setErrors] = useState({});
   const [step, setStep] = useState("form");
-  const [showQr, setShowQr] = useState(false);
+  const [payMethod, setPayMethod] = useState("");
 
   if (!isOpen) return null;
 
@@ -68,7 +68,7 @@ export default function DonateModal({ isOpen, onClose }) {
 
   const handleClose = () => {
     setStep("form");
-    setShowQr(false);
+    setPayMethod("");
     setErrors({});
     setForm({ name: "", mobile: "", email: "", address: "", amount: "", transactionId: "", message: "" });
     onClose();
@@ -111,11 +111,24 @@ export default function DonateModal({ isOpen, onClose }) {
               {/* Payment Section */}
               <div className={styles.paymentSection}>
                 <h4 className={styles.paymentTitle}>💳 Payment</h4>
-                <button type="button" className={styles.payBtn} onClick={() => setShowQr(!showQr)}>
-                  {showQr ? "Hide QR Scanner" : "Show QR Scanner to Pay"}
-                </button>
+                <div className={styles.payOptions}>
+                  <button type="button" className={`${styles.payBtn} ${payMethod === "account" ? styles.payBtnActive : ""}`} onClick={() => setPayMethod(payMethod === "account" ? "" : "account")}>
+                    🏦 Pay using Account Number
+                  </button>
+                  <button type="button" className={`${styles.payBtn} ${payMethod === "scanner" ? styles.payBtnActive : ""}`} onClick={() => setPayMethod(payMethod === "scanner" ? "" : "scanner")}>
+                    📱 Pay using Scanner
+                  </button>
+                </div>
 
-                {showQr && (
+                {payMethod === "account" && (
+                  <div className={styles.qrBox}>
+                    <p><strong>Account Number:</strong> 8329906242</p>
+                    <p><strong>IFSC:</strong> IDIB000N018</p>
+                    <p className={styles.qrNote}>Transfer to the above account and enter transaction ID below</p>
+                  </div>
+                )}
+
+                {payMethod === "scanner" && (
                   <div className={styles.qrBox}>
                     <svg width="180" height="180" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                       <rect width="200" height="200" fill="#fff" stroke="#1a7a6d" strokeWidth="3" rx="12"/>
@@ -174,7 +187,7 @@ export default function DonateModal({ isOpen, onClose }) {
           <div className={styles.receipt}>
             <span className={styles.receiptIcon}>✅</span>
             <h3>Thank You for Your Support!</h3>
-            <div className={styles.receiptCard}>
+            <div className={styles.receiptCard} id="donate-receipt">
               <div className={styles.receiptRow}><span>Name</span><strong>{form.name}</strong></div>
               <div className={styles.receiptRow}><span>Mobile</span><strong>{form.mobile}</strong></div>
               {form.email && <div className={styles.receiptRow}><span>Email</span><strong>{form.email}</strong></div>}
@@ -185,6 +198,15 @@ export default function DonateModal({ isOpen, onClose }) {
               <div className={styles.receiptRow}><span>Date</span><strong>{new Date().toLocaleDateString("en-IN")}</strong></div>
             </div>
             <p className={styles.receiptNote}>Your details have been recorded. Thank you for supporting MERIST Trust.</p>
+            {form.amount && form.transactionId && (
+              <button onClick={() => {
+                const printContent = document.getElementById("donate-receipt").innerHTML;
+                const win = window.open("", "_blank");
+                win.document.write(`<html><head><title>Donation Receipt - MERIST Trust</title><style>body{font-family:sans-serif;padding:40px;max-width:500px;margin:auto}h2{color:#1a7a6d;text-align:center}div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee}span{color:#666}strong{color:#222}</style></head><body><h2>MERIST Trust - Donation Receipt</h2>${printContent}</body></html>`);
+                win.document.close();
+                win.print();
+              }} className={styles.printBtn}>🖨️ Print Receipt</button>
+            )}
             <button onClick={handleClose} className={styles.submitBtn}>Close</button>
           </div>
         )}
