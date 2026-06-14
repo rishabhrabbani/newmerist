@@ -1,0 +1,102 @@
+:root {
+  /* Color Palette */
+  --primary-color: #0c2e27;
+  --primary-rgb: 12, 46, 39;
+  --primary-light: #164e63;
+  --primary-light-rgb: 22, 78, 99;
+  --primary-ultra-light: #e6f7f4;
+  
+  --accent-color: #d97706; /* Elegant Warm Amber/Gold */
+  --accent-hover: #b45309;
+  --accent-rgb: 217, 119, 6;
+  
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --text-light: #f8fafc;
+  
+  --border-color: #e2e8f0;
+  --border-light: rgba(26, 122, 109, 0.1);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-host-grotesk), 'Host Grotesk', sans-serif;
+}
+
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
+}
+
+section {
+  padding: 90px 8%;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Global Responsive Adjustments */
+@media (max-width: 1024px) {
+  section {
+    padding: 70px 6%;
+  }
+  h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 50px 5%;
+  }
+  h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 380px) {
+  section {
+    padding: 40px 4%;
+  }
+  h2 {
+    font-size: 22px;
+  }
+}

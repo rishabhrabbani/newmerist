@@ -1,0 +1,138 @@
+.news {
+  padding: 100px 8%;
+  text-align: center;
+  background: var(--bg-white);
+}
+
+.news h2 {
+  font-size: 40px;
+  color: var(--text-dark);
+  font-weight: 800;
+  margin-bottom: 50px;
+  letter-spacing: -0.5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: left;
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--bg-white);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(22, 78, 99, 0.2);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.card h4 {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  transition: color var(--transition-fast);
+}
+
+.card:hover h4 {
+  color: var(--primary-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .news {
+    padding: 80px 6%;
+  }
+  .news h2 {
+    font-size: 34px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news {
+    padding: 60px 6%;
+  }
+  .news h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .imageWrapper {
+    height: 180px;
+  }
+  .content {
+    padding: 18px;
+  }
+  .card h4 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .imageWrapper {
+    height: 180px;
+  }
+  .content {
+    padding: 14px;
+  }
+  .card h4 {
+    font-size: 14px;
+  }
+}

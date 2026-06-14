@@ -1,0 +1,200 @@
+.hero {
+  height: 100vh;
+  min-height: 650px;
+  background-image: url('/images/Trust/six.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(12, 46, 39, 0.9) 0%,
+    rgba(12, 46, 39, 0.6) 50%,
+    rgba(22, 78, 99, 0.4) 100%
+  );
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+}
+
+.heroContent {
+  max-width: 700px;
+  color: white;
+  animation: fadeIn var(--transition-slow) forwards;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--accent-color);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(248, 250, 252, 0.85);
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+.subtitle strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.primary {
+  background: var(--accent-color);
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  padding: 13px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+.btnIcon {
+  font-size: 16px;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .hero {
+    height: 75vh;
+    min-height: 550px;
+  }
+  .title {
+    font-size: 42px;
+  }
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    min-height: 500px;
+  }
+  .overlay {
+    padding: 0 6%;
+  }
+  .title {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .primary, .secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+  .badge {
+    margin-bottom: 16px;
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+}
+
+/* Small Mobile View */
+@media (max-width: 480px) {
+  .hero {
+    height: 85vh;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .title {
+    font-size: 24px;
+  }
+  .subtitle {
+    font-size: 13px;
+  }
+  .primary, .secondary {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
