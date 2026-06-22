@@ -26,7 +26,7 @@ export default function Navbar({ onDonateClick, activePage, setActivePage }) {
   return (
     <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ""} ${isMenuOpen ? styles.navOpen : ""}`}>
       <div className={styles.logo} onClick={() => handleNavClick("home")} style={{ cursor: "pointer" }}>
-        <Image src="/images/logo.jpeg" alt="MERIST Logo" width={50} height={50} className={styles.logoImg} />
+        <Image src="/images/logo.jpeg" alt="MERIST Logo" width={44} height={44} className={styles.logoImg} priority />
         <span className={styles.logoText}>MERIST</span>
       </div>
 

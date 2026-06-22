@@ -28,16 +28,17 @@
 .logoImg {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
-  object-fit: contain;
-  border: 2px solid var(--primary-light);
-  padding: 2px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: none;
+  padding: 0;
   background: white;
+  box-shadow: 0 2px 8px rgba(26, 122, 109, 0.15);
   transition: transform var(--transition-normal);
 }
 
 .logo:hover .logoImg {
-  transform: rotate(5deg) scale(1.05);
+  transform: scale(1.05);
 }
 
 .logoText {
@@ -142,12 +143,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(15, 23, 42, 0.3);
-  backdrop-filter: blur(4px);
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(15, 23, 42, 0.4);
   z-index: 998;
-  animation: fadeIn var(--transition-normal);
 }
 
 .mobileCta {
@@ -155,48 +155,57 @@
 }
 
 /* Tablet & Mobile View */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .nav {
-    padding: 14px 6%;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 4%;
+    background: rgba(255, 255, 255, 0.97);
     backdrop-filter: blur(12px);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     border-bottom: 1px solid rgba(226, 232, 240, 0.8);
   }
 
   .scrolled {
-    padding: 10px 6%;
+    padding: 10px 4%;
+  }
+
+  .logoImg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logoText {
+    font-size: 20px;
   }
 
   .menu {
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
-    width: min(280px, 80vw);
+    width: 70vw;
+    max-width: 260px;
     height: 100vh;
     height: 100dvh;
     background: white;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 80px 24px;
-    gap: 20px;
+    padding: 70px 20px 20px;
+    gap: 0;
     z-index: 999;
-    transform: translateX(100%);
-    transition: transform var(--transition-normal);
     overflow-y: auto;
   }
 
   .menuOpen {
-    transform: translateX(0);
+    display: flex;
   }
 
   .menu li {
-    font-size: 16px;
+    font-size: 15px;
     width: 100%;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border-color);
+    padding: 14px 0;
+    border-bottom: 1px solid #f1f5f9;
   }
 
   .menu li::after {
@@ -206,7 +215,7 @@
   .mobileCta {
     display: block;
     width: 100%;
-    margin-top: 16px;
+    margin-top: 20px;
     border-bottom: none !important;
   }
 
@@ -217,11 +226,11 @@
     border: none;
     padding: 12px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
-    transition: background var(--transition-fast);
+    transition: background 0.2s;
   }
 
   .mobileBtn:hover {
@@ -229,14 +238,13 @@
   }
 
   .btn {
-    display: none; /* Hide desktop button on mobile */
+    display: none;
   }
 
   .hamburger {
     display: flex;
   }
 
-  /* Hamburger Animation */
   .hamburgerOpen .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
     background-color: var(--accent-color);

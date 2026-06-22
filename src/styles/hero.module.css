@@ -127,74 +127,81 @@
 }
 
 /* Tablet View */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .hero {
-    height: 75vh;
-    min-height: 550px;
+    height: 70vh;
+    min-height: 500px;
   }
   .title {
-    font-size: 42px;
+    font-size: 38px;
   }
   .subtitle {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 28px;
   }
 }
 
 /* Mobile View */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .hero {
-    height: 80vh;
-    min-height: 500px;
+    height: 65vh;
+    min-height: 420px;
   }
   .overlay {
-    padding: 0 6%;
+    padding: 0 5%;
   }
   .title {
-    font-size: 32px;
+    font-size: 26px;
   }
   .subtitle {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 24px;
   }
   .buttons {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
   .primary, .secondary {
     width: 100%;
     justify-content: center;
-    padding: 14px 20px;
-  }
-  .badge {
-    margin-bottom: 16px;
-    font-size: 11px;
-    padding: 4px 12px;
-  }
-}
-
-/* Small Mobile View */
-@media (max-width: 480px) {
-  .hero {
-    height: 85vh;
-  }
-  .title {
-    font-size: 28px;
-  }
-  .subtitle {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 360px) {
-  .title {
-    font-size: 24px;
-  }
-  .subtitle {
-    font-size: 13px;
-  }
-  .primary, .secondary {
     padding: 12px 16px;
     font-size: 14px;
+  }
+  .badge {
+    margin-bottom: 14px;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 425px) {
+  .hero {
+    height: 60vh;
+    min-height: 380px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .subtitle {
+    font-size: 12px;
+  }
+  .primary, .secondary {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 11px;
+  }
+  .primary, .secondary {
+    padding: 10px 12px;
+    font-size: 12px;
   }
 }

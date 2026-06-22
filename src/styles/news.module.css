@@ -122,17 +122,27 @@
 }
 
 @media (max-width: 480px) {
+  .news {
+    padding: 40px 4%;
+  }
   .grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
   .imageWrapper {
-    height: 180px;
+    height: 120px;
   }
   .content {
-    padding: 14px;
+    padding: 10px;
   }
   .card h4 {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  .tag {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  .card {
+    border-radius: 12px;
   }
 }

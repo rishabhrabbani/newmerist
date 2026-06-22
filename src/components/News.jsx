@@ -15,7 +15,7 @@ export default function News() {
     {
       title: "Health & Welfare Camp Conducted in Cuddalore District",
       tag: "Health & Welfare",
-      image: "/images/Trust/nine.jpeg",
+      image: "/images/Trust/TrustUpdation/four.jpeg",
     },
   ];
 

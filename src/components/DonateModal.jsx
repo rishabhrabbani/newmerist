@@ -110,13 +110,16 @@ export default function DonateModal({ isOpen, onClose }) {
 
               {/* Payment Section */}
               <div className={styles.paymentSection}>
-                <h4 className={styles.paymentTitle}>💳 Payment</h4>
+                <h4 className={styles.paymentTitle}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{display:"inline",verticalAlign:"middle",marginRight:"6px"}}><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                  Payment
+                </h4>
                 <div className={styles.payOptions}>
                   <button type="button" className={`${styles.payBtn} ${payMethod === "account" ? styles.payBtnActive : ""}`} onClick={() => setPayMethod(payMethod === "account" ? "" : "account")}>
-                    🏦 Pay using Account Number
+                    <img src="/images/logo.jpeg" alt="" width="18" height="18" style={{borderRadius:"4px",verticalAlign:"middle",marginRight:"6px"}} /> Pay using Account Number
                   </button>
                   <button type="button" className={`${styles.payBtn} ${payMethod === "scanner" ? styles.payBtnActive : ""}`} onClick={() => setPayMethod(payMethod === "scanner" ? "" : "scanner")}>
-                    📱 Pay using Scanner
+                    <img src="/images/logo.jpeg" alt="" width="18" height="18" style={{borderRadius:"4px",verticalAlign:"middle",marginRight:"6px"}} /> Pay using Scanner
                   </button>
                 </div>
 
@@ -130,31 +133,7 @@ export default function DonateModal({ isOpen, onClose }) {
 
                 {payMethod === "scanner" && (
                   <div className={styles.qrBox}>
-                    <svg width="180" height="180" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="200" height="200" fill="#fff" stroke="#1a7a6d" strokeWidth="3" rx="12"/>
-                      <rect x="20" y="20" width="50" height="50" fill="#1a7a6d"/>
-                      <rect x="25" y="25" width="40" height="40" fill="#fff"/>
-                      <rect x="32" y="32" width="26" height="26" fill="#1a7a6d"/>
-                      <rect x="130" y="20" width="50" height="50" fill="#1a7a6d"/>
-                      <rect x="135" y="25" width="40" height="40" fill="#fff"/>
-                      <rect x="142" y="32" width="26" height="26" fill="#1a7a6d"/>
-                      <rect x="20" y="130" width="50" height="50" fill="#1a7a6d"/>
-                      <rect x="25" y="135" width="40" height="40" fill="#fff"/>
-                      <rect x="32" y="142" width="26" height="26" fill="#1a7a6d"/>
-                      <rect x="80" y="80" width="40" height="40" fill="#1a7a6d"/>
-                      <rect x="85" y="85" width="30" height="30" fill="#fff"/>
-                      <rect x="92" y="92" width="16" height="16" fill="#1a7a6d"/>
-                      <rect x="80" y="20" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="95" y="35" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="110" y="45" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="130" y="90" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="150" y="100" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="160" y="130" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="140" y="150" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="80" y="140" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="100" y="160" width="10" height="10" fill="#1a7a6d"/>
-                      <rect x="170" y="160" width="10" height="10" fill="#1a7a6d"/>
-                    </svg>
+                    <img src="/images/Scanner.png" alt="UPI Scanner" style={{ width: "100%", maxWidth: "300px", height: "auto", borderRadius: "12px" }} />
                     <p className={styles.upiId}>UPI: merist@upi</p>
                     <p className={styles.qrNote}>Scan with any UPI app to pay</p>
                   </div>
@@ -185,7 +164,7 @@ export default function DonateModal({ isOpen, onClose }) {
 
         {step === "receipt" && (
           <div className={styles.receipt}>
-            <span className={styles.receiptIcon}>✅</span>
+            <span className={styles.receiptIcon}><img src="/images/logo.jpeg" alt="MERIST" width="40" height="40" style={{borderRadius:"8px"}} /></span>
             <h3>Thank You for Your Support!</h3>
             <div className={styles.receiptCard} id="donate-receipt">
               <div className={styles.receiptRow}><span>Name</span><strong>{form.name}</strong></div>
@@ -205,7 +184,7 @@ export default function DonateModal({ isOpen, onClose }) {
                 win.document.write(`<html><head><title>Donation Receipt - MERIST Trust</title><style>body{font-family:sans-serif;padding:40px;max-width:500px;margin:auto}h2{color:#1a7a6d;text-align:center}div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #eee}span{color:#666}strong{color:#222}</style></head><body><h2>MERIST Trust - Donation Receipt</h2>${printContent}</body></html>`);
                 win.document.close();
                 win.print();
-              }} className={styles.printBtn}>🖨️ Print Receipt</button>
+              }} className={styles.printBtn}>Print Receipt</button>
             )}
             <button onClick={handleClose} className={styles.submitBtn}>Close</button>
           </div>

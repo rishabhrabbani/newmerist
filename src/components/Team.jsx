@@ -20,6 +20,18 @@ const members = [
     description: "Driving rural development initiatives and community engagement programs across Cuddalore.",
     image: "/images/Owner/Jay.jpeg",
   },
+  {
+    name: "Kandan",
+    role: "Trustee",
+    description: "Driving rural development initiatives and community engagement programs across Cuddalore.",
+    image: "/images/Owner/Kandan.jpeg",
+  },
+  {
+    name: "Santhakumari",
+    role: "Trustee",
+    description: "Driving rural development initiatives and community engagement programs across Cuddalore.",
+    image: "/images/Owner/Santhakumari.jpeg",
+  },
 ];
 
 export default function Team() {
@@ -63,9 +75,9 @@ export default function Team() {
             for underprivileged communities.
           </p>
           <div className={styles.values}>
-            <span>🎯 Truth</span>
-            <span>💪 Effort</span>
-            <span>⭐ Prominence</span>
+            <span><img src="/images/logo.jpeg" alt="MERIST" width="20" height="20" style={{borderRadius:"4px",verticalAlign:"middle",marginRight:"6px"}} />Truth</span>
+            <span><img src="/images/logo.jpeg" alt="MERIST" width="20" height="20" style={{borderRadius:"4px",verticalAlign:"middle",marginRight:"6px"}} />Effort</span>
+            <span><img src="/images/logo.jpeg" alt="MERIST" width="20" height="20" style={{borderRadius:"4px",verticalAlign:"middle",marginRight:"6px"}} />Prominence</span>
           </div>
         </div>
       </div>

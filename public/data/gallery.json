@@ -1,5 +1,23 @@
 [
   {
+    "id": 101,
+    "title": "Trust Updation - Initiative 1",
+    "location": "Tamil Nadu, 2026",
+    "image": "/images/Trust/TrustUpdation/one.jpeg"
+  },
+  {
+    "id": 102,
+    "title": "Trust Updation - Initiative 2",
+    "location": "Tamil Nadu, 2026",
+    "image": "/images/Trust/TrustUpdation/two.jpeg"
+  },
+  {
+    "id": 103,
+    "title": "Trust Updation - Initiative 3",
+    "location": "Tamil Nadu, 2026",
+    "image": "/images/Trust/TrustUpdation/three.jpeg"
+  },
+  {
     "id": 1,
     "title": "Community Outreach Program",
     "location": "Nellikuppam, 2025",

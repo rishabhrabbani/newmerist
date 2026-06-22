@@ -74,29 +74,38 @@ h2 {
 }
 
 /* Global Responsive Adjustments */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   section {
-    padding: 70px 6%;
+    padding: 60px 5%;
   }
   h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
-@media (max-width: 768px) {
-  section {
-    padding: 50px 5%;
-  }
-  h2 {
-    font-size: 26px;
-  }
-}
-
-@media (max-width: 380px) {
+@media screen and (max-width: 768px) {
   section {
     padding: 40px 4%;
   }
   h2 {
     font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section {
+    padding: 30px 3%;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  section {
+    padding: 24px 3%;
+  }
+  h2 {
+    font-size: 18px;
   }
 }

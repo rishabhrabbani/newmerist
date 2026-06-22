@@ -142,36 +142,49 @@
 }
 
 /* Mobile View */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .footer {
-    padding: 50px 5% 24px;
+    padding: 40px 4% 20px;
   }
   .footerGrid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
+    margin-bottom: 30px;
   }
   .footerCol:last-child {
     grid-column: span 1;
   }
   .footerCol h4 {
-    font-size: 15px;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .footerCol a {
+    font-size: 13px;
+    margin-bottom: 8px;
   }
   .footerBottom {
     flex-direction: column-reverse;
-    gap: 16px;
+    gap: 14px;
     text-align: center;
     line-height: 1.5;
-    font-size: 12px;
+    font-size: 11px;
+    padding-top: 20px;
   }
   .newsletter {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 8px;
   }
   .newsletter input, .newsletter button {
     width: 100%;
+    padding: 10px 14px;
+    font-size: 13px;
   }
   .socialLinks {
     justify-content: center;
+  }
+  .socialLinks a {
+    width: 32px;
+    height: 32px;
   }
 }

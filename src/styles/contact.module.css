@@ -79,35 +79,42 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .grid {
     gap: 20px;
   }
   .contact {
-    padding: 80px 6%;
+    padding: 60px 5%;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
   .contact {
-    padding: 60px 5%;
+    padding: 40px 4%;
   }
   .contact h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 22px;
+    margin-bottom: 24px;
   }
   .card {
-    padding: 28px 20px;
-  }
-  .map {
-    margin-top: 30px;
+    padding: 20px 16px;
     border-radius: 14px;
   }
+  .card h4 {
+    font-size: 15px;
+  }
+  .card p {
+    font-size: 13px;
+  }
+  .map {
+    margin-top: 24px;
+    border-radius: 12px;
+  }
   .map iframe {
-    height: 250px;
+    height: 200px;
   }
 }
